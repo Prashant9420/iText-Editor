@@ -1,7 +1,7 @@
 import styles from "./stylish.module.css";
 import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom';
-import UserDetails from "./UserDetails";
+
     
 const Signup = (props) => {
   const [credentials, setCredentials] = useState({ name:"",email: "", password: "" ,gender:""});
@@ -27,7 +27,7 @@ const Signup = (props) => {
       navigate("/home");
     }
     else{
-      props.showAlert("Invalid Credentials","error")
+      props.showAlert("Invalid Credentials","warning")
     }
       localStorage.setItem("token", json.hashcode);
       props.showAlert("Your Account has been created: Login to Continue","success");
@@ -85,7 +85,7 @@ const Signup = (props) => {
                     </form>  </div>  
             
             </div></section>
-            <UserDetails credentials={credentials} />
+          
         </div>     
         
     )

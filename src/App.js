@@ -4,9 +4,8 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import TextForm from "./components/TextForm";
 import Save from "./components/Save";
-import Signup from './components/Signup';
+import Signup from "./components/Signup";
 import Login from './components/Login';
-// import UserDetails from "./components/UserDetails";
 import NoteState from "./components/context/notes/NoteState";
 import { useState } from "react";
 import Alert from "./components/Alert"

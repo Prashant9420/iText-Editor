@@ -18,16 +18,16 @@ const Login = (props) => {
       }),
     });
     const json = await response.json();
-    // console.log(json);
+    console.log(json);
     if (json.success) {
       localStorage.setItem("token", json.hashcode);
       props.showAlert("Logged in Successfully","success")
       navigate("/home");
     } 
-    else {
-      props.showAlert("Invalid Credentials","error")
-
-    }
+      else{
+        // alert("fuck")
+      props.showAlert("Invalid credentials", "warning");
+    }    
   }
 
   const onChange = (e) => {

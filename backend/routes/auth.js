@@ -94,22 +94,18 @@ router.post(
       let user = await User.findOne({ email });
       if (!user) {
         success=false;
-        return res
-          .status(400)
-          .json({ success,error: "Please login with correct credentials" });
+        return res.status(400).send({ success,error: "Please login with correct credentials" });
       }
       const passcomp = await bcrypt.compare(password, user.password);
       if (!passcomp) {
         success=false;
-        return res
-          .status(400)
-          .json({success,error: "Plese login with correct credentials" });
+        return res.status(400).send({success,error: "Plese login with correct credentials" });
       }
       const data = {
         user: {
-          id: user.id,
-        },
-      };
+          id: user.id
+        }
+      }
       const hashcode = jwt.sign(data, JWT);
       success=true;
       res.json({ success,hashcode });
