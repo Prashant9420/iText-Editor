@@ -8,7 +8,7 @@ const Signup = (props) => {
   const navigate= useNavigate();
     const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+    const response = await fetch("/api/auth/createuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const Signup = (props) => {
     }
       localStorage.setItem("token", json.hashcode);
       props.showAlert("Your Account has been created: Login to Continue","success");
-        const res= await fetch("http://localhost:5000/api/auth/sendmail",{
+        const res= await fetch("/api/auth/sendmail",{
       method:'POST',
       headers:{
         "Content-Type":'application/json'
