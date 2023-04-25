@@ -5,6 +5,8 @@ import About from "./components/About";
 import TextForm from "./components/TextForm";
 import Save from "./components/Save";
 import Signup from "./components/Signup";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Login from './components/Login';
 import NoteState from "./components/context/notes/NoteState";
 import { useState } from "react";
@@ -37,6 +39,7 @@ function App() {
   }
   return (
   <NoteState mode={mode}>
+    <ToastContainer /> 
     <div className="App">
       <Router>
         <Navbar mode={mode} toggleMode={toggleMode} key={new Date()} />

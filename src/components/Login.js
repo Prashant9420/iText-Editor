@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import styles from "./indexing.module.css";
-const Login = (props) => {
+const Login = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const navigate= useNavigate();
 
@@ -21,12 +23,14 @@ const Login = (props) => {
     console.log(json);
     if (json.success) {
       localStorage.setItem("token", json.hashcode);
-      props.showAlert("Logged in Successfully","success")
+      toast.success("Logged in Successfully",{ position: toast.POSITION.TOP_CENTER});
+      // props.showAlert("Logged in Successfully","success")
       navigate("/home");
     } 
       else{
         // alert("fuck")
-      props.showAlert("Invalid credentials", "warning");
+        toast.error("Invalid Credentials",{position: toast.POSITION.TOP_CENTER});
+      // props.showAlert("Invalid credentials", "warning");
     }    
   }
 
@@ -61,7 +65,8 @@ const Login = (props) => {
           </div>
         </div>
       </section>
-    </div>
+    
+     </div> 
   );
 };
 

@@ -1,10 +1,13 @@
 import React,{useEffect} from "react";
 import PropTypes from "prop-types";
 import "../index.css";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 const Navbar=(props) =>{
   let navigate=useNavigate();
   const handleLogout=()=>{
+    toast.info("Logged out",{position: toast.POSITION.TOP_CENTER});
     localStorage.removeItem('token');
     navigate('/login');
   }

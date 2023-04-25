@@ -1,10 +1,12 @@
 import styles from "./stylish.module.css";
 import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom';
-
+import {toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
     
-const Signup = (props) => {
+const Signup = () => {
   const [credentials, setCredentials] = useState({ name:"",email: "", password: "" ,gender:""});
+  
   const navigate= useNavigate();
     const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,15 +24,21 @@ const Signup = (props) => {
     });
     
     const json = await response.json();
-    if(json.success){
+    if(json){
       localStorage.setItem("token", json.hashcode);
+      toast.success("Your Account has been created",{ position: toast.POSITION.TOP_CENTER});
       navigate("/home");
+      
     }
     else{
-      props.showAlert("Invalid Credentials","warning")
+      // props.showAlert("Invalid Credentials","warning")
+      toast.error("Invalid Credentials",{position: toast.POSITION.TOP_CENTER});
+      navigate("/createuser")
     }
       localStorage.setItem("token", json.hashcode);
-      props.showAlert("Your Account has been created: Login to Continue","success");
+      
+      //
+      
         const res= await fetch("/api/auth/sendmail",{
       method:'POST',
       headers:{
@@ -85,8 +93,8 @@ const Signup = (props) => {
                     </form>  </div>  
             
             </div></section>
-          
-        </div>     
+               
+        </div>  
         
     )
 }
