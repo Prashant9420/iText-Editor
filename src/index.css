@@ -8,32 +8,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.form-control{
+.form-control {
   border: 2px solid rgb(75, 90, 70);
   border-radius: 13px;
   display: flex;
- 
   box-shadow: 70px;
 }
-/* #form{
-  display: inline-block;
-  align-content: center;
-} */
+
 .form-check-label {
   color: white;
 }
+
 .container {
   color: wheat;
   display: flexbox;
-  /* align-items: center; */
   align-self: center;
 }
+
 #sr-only {
   display: flex;
   justify-content: left;
   color: black;
 }
-#description{
+
+#description {
   display: flex;
   justify-content: left;
   color: black;
@@ -44,51 +42,53 @@ body {
   margin-top: -36px;
   color: rgb(204, 186, 255);
 }
-/* .Nbody {
-  background-color: rgb(0, 0, 0);
-} */
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 .accordion-button::after {
   filter: invert(1);
 }
+
 .navbar-brand {
   color: rgb(182, 52, 1);
 }
+
 .nav-link {
   color: whitesmoke;
 }
-/* .nav-link::shadow{
-  color: #000;
-} */
 
 .containerAllNotes {
-  /* justify-content: center; */
   display: flex;
 }
+
 .far {
   display: flex;
   padding: 4px;
   color: black;
 }
+
 i {
   cursor: context-menu;
 }
-.card{
+
+.card {
   background-color: rgba(199, 101, 3, 0.281);
   padding: 3px;
   margin: 3px;
   color: rgb(168, 204, 252);
-  display:inline-flex;
-   border-radius: 13px;
+  display: inline-flex;
+  border-radius: 13px;
   border: 2px solid rgba(63, 23, 1, 0.74);
   text-align: justify;
 }
+
 .boldy {
   color: rgba(0, 0, 0, 0.692);
 }
-.btn{
+
+.btn {
   border-radius: 9px;
 }
